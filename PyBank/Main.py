@@ -5,11 +5,11 @@ import os
 import csv
 
 #Create path to read csv file
-csvpath = os.path.join("..", "Resources", "budget_data.csv")
+pybank_csv = os.path.join("..", "Resources", "budget_data.csv")
 
 
 #Open csv file
-with open(csvpath) as csv file:
+with open(pybank_csv) as csvfile:
 
     #Set csvreader with comma as delimiter
     csvreader = csv.reader(csvfile, delimiter=",")

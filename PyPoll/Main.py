@@ -5,11 +5,11 @@ import os
 import csv
 
 #Create path to read csv file
-csvpath = os.path.join("..", "Resources", "election_data.csv")
+pypoll_csv = os.path.join("..", "Resources", "election_data.csv")
 
 
 #Open csv file
-with open(csvpath) as csv file:
+with open(pypoll_csv) as csvfile:
 
     #Set csvreader with comma as delimiter
     csvreader = csv.reader(csvfile, delimiter=",")
