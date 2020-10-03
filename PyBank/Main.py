@@ -15,7 +15,16 @@ with open(csvpath) as csvfile:
     #Skip first row (header)
     csv_header = next(csvreader)
 
+    #Define Variables
+    month_count = 0
+    profit_loss=[]
+
     for row in csvreader:
+        month_count += 1
+        print(month_count)
+        
+
+        
         
 
 
