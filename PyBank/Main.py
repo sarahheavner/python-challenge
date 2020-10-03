@@ -1,16 +1,29 @@
-#Import os module to allow files across different operating systems
+#Import os module to create file path across operating systems
 import os
 
-#Import module for reading csv files
+#Import csv module to read CSV file
 import csv
 
-#Create path to read csv file
-pybank_csv = os.path.join("..", "Resources", "budget_data.csv")
 
+#Create path to CSV file
+csvpath = os.path.join('Resources', 'budget_data.csv')
 
 #Open csv file
-with open(pybank_csv) as csvfile:
+with open(csvpath) as csvfile:
+    #Set delimiter as comma
+    csvreader = csv.reader(csvfile, delimiter=',')
+    #Skip first row (header)
+    csv_header = next(csvreader)
 
-    #Set csvreader with comma as delimiter
-    csvreader = csv.reader(csvfile, delimiter=",")
+    for row in csvreader:
+        
+
+
+
+
+
+
+
+
+
 
