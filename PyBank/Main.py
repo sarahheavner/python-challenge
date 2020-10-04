@@ -34,15 +34,15 @@ with open(csvpath, newline='') as csvfile:
 
         
     #Count number of rows 
-    total_months=len(date)
+    total_months = len(date)
     #Calculate total profit
-    total_profit=sum(profit)
+    total_profit = sum(profit)
     #Calculate average montly change
     total_monthly_change = sum(monthly_change)
-    average_change=round((total_monthly_change)/(int(total_months)-1),2)
+    average_change = round((total_monthly_change)/(int(total_months)-1),2)
     #Identify greatest monthly increase and decrease
-    greatest_increase=max(monthly_change)    
-    greatest_decrease=min(monthly_change)
+    greatest_increase = max(monthly_change)    
+    greatest_decrease = min(monthly_change)
     
     #print financial analysis
     print('Financial Analysis')
@@ -50,8 +50,22 @@ with open(csvpath, newline='') as csvfile:
     print(f'Total Months: {total_months}')
     print(f'Total: {total_profit}')
     print(f'Average Change: {average_change}')
-    print(f'Greatest Increase in Profits: {greatest_increase}')
-    print(f'Greatest Decrease in Profits: {greatest_decrease}')
+    print(f'Greatest Increase in Profits: ({greatest_increase})')
+    print(f'Greatest Decrease in Profits: ({greatest_decrease})')
+
+
+#Specify output path for txt file
+output_path = os.path.join('Analysis', 'pybank_analysis.txt')
+
+with open('pybank_analysis.txt', 'w') as text:
+    text.write('Financial Analysis')
+    text.write(f'----------------------')
+    text.write(f'Total Months: {total_months}')
+    text.write(f'Total: {total_profit}')
+    text.write(f'Average Change: {average_change}')
+    text.write(f'Greatest Increase in Profits: ({greatest_increase})')
+    text.write(f'Greatest Decrease in Profits: ({greatest_decrease})')
+
    
     
         
