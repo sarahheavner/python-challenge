@@ -9,19 +9,58 @@ import csv
 csvpath = os.path.join('Resources', 'budget_data.csv')
 
 #Open csv file
-with open(csvpath) as csvfile:
+with open(csvpath, newline='') as csvfile:
     #Set delimiter as comma
     csvreader = csv.reader(csvfile, delimiter=',')
     #Skip first row (header)
     csv_header = next(csvreader)
 
     #Define Variables
-    month_count = 0
-    profit_loss=[]
+    date = []
+    profit = []
+    monthly_change = []
+
+    #Set starting values at 0
+    #month_count = 0
+    #monthly_change = 0
 
     for row in csvreader:
-        month_count += 1
-        print(month_count)
+        #Counts number of rows excluding header
+        #month_count += 1
+        #print(month_count)
+
+        date.append(row[0])
+
+        profit.append(int(row[1]))
+
+
+
+
+    total_months=len(date)
+    total_profit=sum(profit)
+
+    print('Financial Analysis')
+    print(f'----------------------')
+    print(f'Total Months: {total_months}')
+    print(f'Total: {total_profit}')
+   
+    
+        
+
+
+
+        
+
+
+
+        
+        
+
+
+
+        
+
+
         
 
         

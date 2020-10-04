@@ -15,5 +15,10 @@ with open(csvpath) as csvfile:
     #Skip first row (header)
     csv_header = next(csvreader)
 
+    total_votes = 0
+
     for row in csvreader:
+        total_votes +=1
+
+    print(total_votes)
         
