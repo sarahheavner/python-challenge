@@ -43,6 +43,9 @@ with open(csvpath, newline='') as csvfile:
     #Identify greatest monthly increase and decrease
     greatest_increase = max(monthly_change)    
     greatest_decrease = min(monthly_change)
+    #Identify date of greatest monthly increase and decrease referencing list index
+    month_inc = date[monthly_change.index(greatest_increase)]
+    month_dec = date[monthly_change.index(greatest_decrease)]
     
     #print financial analysis
     print('Financial Analysis')
@@ -50,25 +53,30 @@ with open(csvpath, newline='') as csvfile:
     print(f'Total Months: {total_months}')
     print(f'Total: {total_profit}')
     print(f'Average Change: {average_change}')
-    print(f'Greatest Increase in Profits: ({greatest_increase})')
-    print(f'Greatest Decrease in Profits: ({greatest_decrease})')
+    print(f'Greatest Increase in Profits: {month_inc} ({greatest_increase})')
+    print(f'Greatest Decrease in Profits: {month_dec} ({greatest_decrease})')
 
 
 #Specify output path for txt file
-output_path = os.path.join('Analysis', 'pybank_analysis.txt')
-
-with open('pybank_analysis.txt', 'w') as text:
-    text.write('Financial Analysis')
-    text.write(f'----------------------')
-    text.write(f'Total Months: {total_months}')
-    text.write(f'Total: {total_profit}')
-    text.write(f'Average Change: {average_change}')
-    text.write(f'Greatest Increase in Profits: ({greatest_increase})')
-    text.write(f'Greatest Decrease in Profits: ({greatest_decrease})')
+output = os.path.join('Analysis', 'pybank_analysis.txt')
+#open as txtfile writer
+with open(output, 'w') as file:
+    #Write results to txt file
+    file.write('Financial Analysis')
+    file.write('\n')
+    file.write(f'----------------------')
+    file.write('\n')
+    file.write(f'Total Months: {total_months}')
+    file.write('\n')
+    file.write(f'Total: {total_profit}')
+    file.write('\n')
+    file.write(f'Average Change: {average_change}')
+    file.write('\n')
+    file.write(f'Greatest Increase in Profits: {month_inc} ({greatest_increase})')
+    file.write('\n')
+    file.write(f'Greatest Decrease in Profits: {month_dec} ({greatest_decrease})')
 
    
-    
-        
 
 
 
